@@ -1,9 +1,13 @@
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'; 
-
-
+import bodyParser from 'body-parser'
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.post('/contact', function(req, res){
+  console.log(req.body)
+})
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // console.log(path.dirname("C:/Users/Admin/Desktop/webdev/18-1-2024/views/home.html"));
